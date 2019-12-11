@@ -21,11 +21,11 @@ public class ChangeWindow {
         shell.open();
 
         Label labelMain = new Label (shell, SWT.NONE);
-        labelMain.setText("Введите новую информацию о пациенте");
+        labelMain.setText("Enter new information about the patient");
         labelMain.setBounds(85, 15, 250, 20);
 
         Label labelSurname = new Label (shell, SWT.NONE);
-        labelSurname.setText("Фамилия:");
+        labelSurname.setText("Surname:");
         labelSurname.setBounds(10, 47, 70, 20);
 
         Text textSurname = new Text (shell, SWT.BORDER);
@@ -33,7 +33,7 @@ public class ChangeWindow {
         textSurname.setText(inf.get(0));
 
         Label labelName = new Label (shell, SWT.NONE);
-        labelName.setText("Имя:");
+        labelName.setText("Name:");
         labelName.setBounds(10, 77, 70, 20);
 
         Text textName = new Text (shell, SWT.BORDER);
@@ -41,7 +41,7 @@ public class ChangeWindow {
         textName.setText(inf.get(1));
 
         Label labelSecondName = new Label (shell, SWT.NONE);
-        labelSecondName.setText("Отчество:");
+        labelSecondName.setText("SecondName:");
         labelSecondName.setBounds(10, 107, 70, 20);
 
         Text textSecondName = new Text (shell, SWT.BORDER);
@@ -49,7 +49,7 @@ public class ChangeWindow {
         textSecondName.setText(inf.get(2));
 
         Label labelSex = new Label (shell, SWT.NONE);
-        labelSex.setText("Пол(м/ж):");
+        labelSex.setText("Sex(f/m):");
         labelSex.setBounds(10, 137, 70, 20);
 
         Text textSex = new Text (shell, SWT.BORDER);
@@ -57,7 +57,7 @@ public class ChangeWindow {
         textSex.setText(inf.get(3));
 
         Label labelAge = new Label (shell, SWT.NONE);
-        labelAge.setText("Возраст:");
+        labelAge.setText("Age:");
         labelAge.setBounds(10, 167, 70, 20);
 
         Text textAge = new Text (shell, SWT.BORDER);
@@ -65,7 +65,7 @@ public class ChangeWindow {
         textAge.setText(inf.get(4));
 
         Label labelDiagnosis = new Label (shell, SWT.NONE);
-        labelDiagnosis.setText("Диагноз:");
+        labelDiagnosis.setText("Diagnosis:");
         labelDiagnosis.setBounds(10, 197, 70, 20);
 
         Text textDiagnosis = new Text (shell, SWT.BORDER);
@@ -73,7 +73,7 @@ public class ChangeWindow {
         textDiagnosis.setText(inf.get(5));
 
         Label labelHowArrive = new Label (shell, SWT.NONE);
-        labelHowArrive.setText("Как поступил:");
+        labelHowArrive.setText("Arriving:");
         labelHowArrive.setBounds(10, 227, 90, 20);
 
         Text textHowArrive = new Text (shell, SWT.BORDER);
@@ -81,7 +81,7 @@ public class ChangeWindow {
         textHowArrive.setText(inf.get(6));
 
         Label labelDateOfArrival = new Label (shell, SWT.NONE);
-        labelDateOfArrival.setText("Дата поступления:");
+        labelDateOfArrival.setText("Arrival date:");
         labelDateOfArrival.setBounds(10, 257, 105, 20);
 
         Text textDateOfArrival = new Text (shell, SWT.BORDER);
@@ -89,7 +89,7 @@ public class ChangeWindow {
         textDateOfArrival.setText(inf.get(7));
 
         Label labelGrowth = new Label (shell, SWT.NONE);
-        labelGrowth.setText("Рост:");
+        labelGrowth.setText("Growth:");
         labelGrowth.setBounds(10, 287, 70, 20);
 
         Text textGrowth = new Text (shell, SWT.BORDER);
@@ -97,7 +97,7 @@ public class ChangeWindow {
         textGrowth.setText(inf.get(8));
 
         Label labelHairColor = new Label (shell, SWT.NONE);
-        labelHairColor.setText("Цвет волос:");
+        labelHairColor.setText("Hair color:");
         labelHairColor.setBounds(10, 317, 70, 20);
 
         Text textHairColor = new Text (shell, SWT.BORDER);
@@ -105,7 +105,7 @@ public class ChangeWindow {
         textHairColor.setText(inf.get(9));
 
         Label labelSpecialSings = new Label (shell, SWT.NONE);
-        labelSpecialSings.setText("Особые приметы:");
+        labelSpecialSings.setText("Special signs");
         labelSpecialSings.setBounds(10, 347, 100, 20);
 
         Text textSpecialSings = new Text (shell, SWT.BORDER);
@@ -113,7 +113,7 @@ public class ChangeWindow {
         textSpecialSings.setText(inf.get(10));
 
         Label labelPossibleAge = new Label (shell, SWT.NONE);
-        labelPossibleAge.setText("Примерный возраст:");
+        labelPossibleAge.setText("Possible age:");
         labelPossibleAge.setBounds(10, 377, 120, 20);
 
         Text textPossibleAge = new Text (shell, SWT.BORDER);
@@ -121,7 +121,7 @@ public class ChangeWindow {
         textPossibleAge.setText(inf.get(11));
 
         Label labelDateDischarge = new Label (shell, SWT.NONE);
-        labelDateDischarge.setText("Дата выписки:");
+        labelDateDischarge.setText("Date of discharge:");
         labelDateDischarge.setBounds(10, 407, 105, 20);
 
         Text textDateDischarge = new Text (shell, SWT.BORDER);
@@ -129,7 +129,7 @@ public class ChangeWindow {
         textDateDischarge.setText(inf.get(15));
 
         Label labelCauseDischarge = new Label (shell, SWT.NONE);
-        labelCauseDischarge.setText("Причина выписки:");
+        labelCauseDischarge.setText("Cause of discharge:");
         labelCauseDischarge.setBounds(10, 437, 105, 20);
 
         Text textCauseDischarge = new Text (shell, SWT.BORDER);
@@ -137,7 +137,7 @@ public class ChangeWindow {
         textCauseDischarge.setText(inf.get(16));
 
         Button addButton = new Button (shell, SWT.PUSH);
-        addButton.setText("Изменить");
+        addButton.setText("Add info");
         addButton.setBounds(165, 535, 70, 30);
         addButton.addSelectionListener(new SelectionAdapter() {
 

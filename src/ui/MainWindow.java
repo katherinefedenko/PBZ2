@@ -39,11 +39,11 @@ public class MainWindow {
 	
 	public void createMainWindow() {
 		shell.setBounds(150, 100, 1200, 600);
-		shell.setText("Lab Work №2");
+		shell.setText("Hospital");
 		shell.forceFocus();
 
 		Button openDatabase = new Button(shell, SWT.PUSH);
-		openDatabase.setText("Открыть БД пациентов");
+		openDatabase.setText("Open Patient DataBase");
 		openDatabase.setBounds(1050, 15, 133, 40);
 		openDatabase.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -59,7 +59,7 @@ public class MainWindow {
 		});
 
 		Button openDatabaseRoom = new Button(shell, SWT.PUSH);
-		openDatabaseRoom.setText("Открыть БД палат");
+		openDatabaseRoom.setText("Open Room DataBase");
 		openDatabaseRoom.setBounds(1050, 55, 133, 40);
 		openDatabaseRoom.addSelectionListener(new SelectionAdapter() {
 			@Override

@@ -56,51 +56,51 @@ public class RecordsOnPage {
 		idColumn.setWidth(30);
 
 		TableColumn FIOColumn = new TableColumn(table, SWT.DEFAULT);
-		FIOColumn.setText("Р¤Р�Рћ");
+		FIOColumn.setText("Full Name");
 		FIOColumn.setWidth(200);
 
 		TableColumn sexColumn = new TableColumn(table, SWT.DEFAULT);
-		sexColumn.setText("РџРѕР»");
+		sexColumn.setText("Sex");
 		sexColumn.setWidth(40);
 
 		TableColumn ageColumn = new TableColumn(table, SWT.DEFAULT);
-		ageColumn.setText("Р’РѕР·СЂР°СЃС‚");
+		ageColumn.setText("Age");
 		ageColumn.setWidth(80);
 
 		TableColumn diagnosisColumn = new TableColumn(table, SWT.DEFAULT);
-		diagnosisColumn.setText("Р”РёР°РіРЅРѕР·");
+		diagnosisColumn.setText("Diagnosis");
 		diagnosisColumn.setWidth(100);
 
 		TableColumn howArriveColumn = new TableColumn(table, SWT.DEFAULT);
-		howArriveColumn.setText("РљР°Рє РїСЂРёР±С‹Р»");
+		howArriveColumn.setText("Arriving");
 		howArriveColumn.setWidth(200);
 
 		TableColumn dateOfArrivalColumn = new TableColumn(table, SWT.DEFAULT);
-		dateOfArrivalColumn.setText("Р”Р°С‚Р° РїСЂРёР±С‹С‚РёСЏ");
+		dateOfArrivalColumn.setText("Arrival date");
 		dateOfArrivalColumn.setWidth(100);
 
 		TableColumn growthColumn = new TableColumn(table, SWT.DEFAULT);
-		growthColumn.setText("Р РѕСЃС‚");
+		growthColumn.setText("Growth");
 		growthColumn.setWidth(40);
 
 		TableColumn hairColorColumn = new TableColumn(table, SWT.DEFAULT);
-		hairColorColumn.setText("Р¦РІРµС‚ РІРѕР»РѕСЃ");
+		hairColorColumn.setText("Hair color");
 		hairColorColumn.setWidth(80);
 
 		TableColumn specialSingsColumn = new TableColumn(table, SWT.DEFAULT);
-		specialSingsColumn.setText("РћСЃРѕР±С‹Рµ РїСЂРёРјРµС‚С‹");
+		specialSingsColumn.setText("Special signs");
 		specialSingsColumn.setWidth(120);
 
 		TableColumn possibleAgeColumn = new TableColumn(table, SWT.DEFAULT);
-		possibleAgeColumn.setText("Р’РѕР·РјРѕР¶РЅС‹Р№ РІРѕР·СЂР°СЃС‚");
+		possibleAgeColumn.setText("Possible age");
 		possibleAgeColumn.setWidth(130);
 
 		TableColumn numberOfRoomColumn = new TableColumn(table, SWT.DEFAULT);
-		numberOfRoomColumn.setText("РџР°Р»Р°С‚Р°");
+		numberOfRoomColumn.setText("Room");
 		numberOfRoomColumn.setWidth(60);
 
 		TableColumn telephoneNumberColumn = new TableColumn(table, SWT.DEFAULT);
-		telephoneNumberColumn.setText("РўРµР»РµС„РѕРЅ");
+		telephoneNumberColumn.setText("Room phone");
 		telephoneNumberColumn.setWidth(80);
 
 		/*TableColumn transferColumn = new TableColumn(table, SWT.DEFAULT);
@@ -108,11 +108,11 @@ public class RecordsOnPage {
 		transferColumn.setWidth(130);*/
 
 		TableColumn dateOfDischargeColumn = new TableColumn(table, SWT.DEFAULT);
-		dateOfDischargeColumn.setText("Р”Р°С‚Р° РІС‹РїРёСЃРєРё");
+		dateOfDischargeColumn.setText("Discharge date");
 		dateOfDischargeColumn.setWidth(100);
 
 		TableColumn causeOfDischargeColumn = new TableColumn(table, SWT.DEFAULT);
-		causeOfDischargeColumn.setText("РџСЂРёС‡РёРЅР° РІС‹РїРёСЃРєРё");
+		causeOfDischargeColumn.setText("Discharge cause");
 		causeOfDischargeColumn.setWidth(130);
 
 		initiateListeners(shell);
@@ -123,11 +123,11 @@ public class RecordsOnPage {
 		createTable(shell);
 
         TableColumn roomColumn = new TableColumn(table, SWT.DEFAULT);
-        roomColumn.setText("РџР°Р»Р°С‚Р°");
+        roomColumn.setText("Room");
         roomColumn.setWidth(100);
 
         TableColumn telephoneColumn = new TableColumn(table, SWT.DEFAULT);
-        telephoneColumn.setText("РўРµР»РµС„РѕРЅ");
+        telephoneColumn.setText("Phone");
         telephoneColumn.setWidth(100);
 
 
@@ -144,7 +144,7 @@ public class RecordsOnPage {
         });
 
         addRoom = new Button(shell, SWT.PUSH);
-        addRoom.setText("Р”РѕР±Р°РІРёС‚СЊ");
+        addRoom.setText("Add room");
         addRoom.setBounds(1050, 95, 133, 40);
 
         addRoom.addSelectionListener(new SelectionAdapter() {
@@ -155,7 +155,7 @@ public class RecordsOnPage {
         });
 
         deleteRoom = new Button(shell, SWT.PUSH);
-        deleteRoom.setText("РЈРґР°Р»РёС‚СЊ");
+        deleteRoom.setText("Delete room");
         deleteRoom.setBounds(1050, 135, 133, 40);
 		shellHelp = (Shell) shell;
         deleteRoom.addSelectionListener(new SelectionAdapter() {
@@ -178,7 +178,7 @@ public class RecordsOnPage {
         });
 
         changeRoom = new Button(shell, SWT.PUSH);
-        changeRoom.setText("Р�Р·РјРµРЅРёС‚СЊ");
+        changeRoom.setText("Change room");
         changeRoom.setBounds(1050, 175, 133, 40);
         changeRoom.addSelectionListener(new SelectionAdapter() {
             @Override
@@ -206,7 +206,7 @@ public class RecordsOnPage {
 		});
 
 		add = new Button(shell, SWT.PUSH);
-		add.setText("Р”РѕР±Р°РІРёС‚СЊ");
+		add.setText("Add");
 		add.setBounds(1050, 95, 133, 40);
 
 		add.addSelectionListener(new SelectionAdapter() {
@@ -217,7 +217,7 @@ public class RecordsOnPage {
 		});
 
 		delete = new Button(shell, SWT.PUSH);
-		delete.setText("РЈРґР°Р»РёС‚СЊ");
+		delete.setText("Delete");
 		delete.setBounds(1050, 135, 133, 40);
 		delete.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -232,7 +232,7 @@ public class RecordsOnPage {
 		});
 
 		change = new Button(shell, SWT.PUSH);
-		change.setText("Р�Р·РјРµРЅРёС‚СЊ");
+		change.setText("Change");
 		change.setBounds(1050, 175, 133, 40);
 		change.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -244,7 +244,7 @@ public class RecordsOnPage {
 		});
 
 		findRoom = new Button(shell, SWT.PUSH);
-		findRoom.setText("РќР°Р№С‚Рё РїР°Р»Р°С‚Сѓ");
+		findRoom.setText("Find room");
 		findRoom.setBounds(1050, 215, 133, 40);
 		findRoom.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -254,7 +254,7 @@ public class RecordsOnPage {
 		});
 
 		findDate = new Button(shell, SWT.PUSH);
-		findDate.setText("РќР°Р№С‚Рё РїРѕ РґР°С‚Рµ");
+		findDate.setText("Find by date");
 		findDate.setBounds(1050, 255, 133, 40);
 		findDate.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -264,7 +264,7 @@ public class RecordsOnPage {
 		});
 
 		findFemale = new Button(shell, SWT.PUSH);
-        findFemale.setText("РќР°Р№С‚Рё РїРѕ РІРѕР·СЂР°СЃС‚Сѓ");
+        findFemale.setText("Find by age");
         findFemale.setBounds(1050, 295, 133, 40);
         findFemale.addSelectionListener(new SelectionAdapter() {
             @Override
@@ -274,7 +274,7 @@ public class RecordsOnPage {
         });
 
         transfer = new Button(shell, SWT.PUSH);
-		transfer.setText("РџРµСЂРµРІРµСЃС‚Рё");
+		transfer.setText("Transfer");
 		transfer.setBounds(1050, 335, 133, 40);
 		transfer.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -286,7 +286,7 @@ public class RecordsOnPage {
 		});
 
 		informationAboutTransfer = new Button(shell, SWT.PUSH);
-		informationAboutTransfer.setText("Р’СЃРµ РїРµСЂРµРІРѕРґС‹");
+		informationAboutTransfer.setText("Transfer info");
 		informationAboutTransfer.setBounds(1050, 375, 133, 40);
 		informationAboutTransfer.addSelectionListener(new SelectionAdapter() {
 			@Override
@@ -303,19 +303,19 @@ public class RecordsOnPage {
 		createTable(shell);
 
 		TableColumn FIOColumn = new TableColumn(table, SWT.DEFAULT);
-		FIOColumn.setText("Р¤Р�Рћ");
+		FIOColumn.setText("Full Name");
 		FIOColumn.setWidth(200);
 
 		TableColumn numberOfRoomColumn = new TableColumn(table, SWT.DEFAULT);
-		numberOfRoomColumn.setText("РџР°Р»Р°С‚Р°");
+		numberOfRoomColumn.setText("Room num");
 		numberOfRoomColumn.setWidth(60);
 
 		TableColumn telephoneNumberColumn = new TableColumn(table, SWT.DEFAULT);
-		telephoneNumberColumn.setText("РўРµР»РµС„РѕРЅ");
+		telephoneNumberColumn.setText("Phone");
 		telephoneNumberColumn.setWidth(80);
 
 		TableColumn ageColumn = new TableColumn(table, SWT.DEFAULT);
-		ageColumn.setText("Р’РѕР·СЂР°СЃС‚");
+		ageColumn.setText("Age");
 		ageColumn.setWidth(80);
 	}
 
@@ -324,19 +324,19 @@ public class RecordsOnPage {
 		createTable(shell);
 
 		TableColumn FIOColumn = new TableColumn(table, SWT.DEFAULT);
-		FIOColumn.setText("Р¤Р�Рћ");
+		FIOColumn.setText("Full Name");
 		FIOColumn.setWidth(200);
 
 		TableColumn numberOfRoomColumn = new TableColumn(table, SWT.DEFAULT);
-		numberOfRoomColumn.setText("РџР°Р»Р°С‚Р°");
+		numberOfRoomColumn.setText("Room num");
 		numberOfRoomColumn.setWidth(60);
 
 		TableColumn dateOfArrivalColumn = new TableColumn(table, SWT.DEFAULT);
-		dateOfArrivalColumn.setText("Р”Р°С‚Р° РїСЂРёР±С‹С‚РёСЏ");
+		dateOfArrivalColumn.setText("Arrival date");
 		dateOfArrivalColumn.setWidth(100);
 
 		TableColumn ageColumn = new TableColumn(table, SWT.DEFAULT);
-		ageColumn.setText("Р’РѕР·СЂР°СЃС‚");
+		ageColumn.setText("Age");
 		ageColumn.setWidth(80);
 	}
 
@@ -344,11 +344,11 @@ public class RecordsOnPage {
 		createTable(shell);
 
         TableColumn FIOColumn = new TableColumn(table, SWT.DEFAULT);
-        FIOColumn.setText("Р¤Р�Рћ");
+        FIOColumn.setText("Full Name");
         FIOColumn.setWidth(200);
 
         TableColumn ageColumn = new TableColumn(table, SWT.DEFAULT);
-        ageColumn.setText("Р’РѕР·СЂР°СЃС‚");
+        ageColumn.setText("Age");
         ageColumn.setWidth(80);
     }
 
@@ -439,7 +439,7 @@ public class RecordsOnPage {
 	private void errorAlarm(Shell shell) {
 		MessageBox messageError = new MessageBox(shell, SWT.ICON_ERROR);
 		messageError.setText("ERROR!");
-		messageError.setMessage("РќРµР»СЊР·СЏ СѓРґР°Р»РёС‚СЊ РїР°Р»Р°С‚Сѓ");
+		messageError.setMessage("Can't delete room");
 		messageError.open();
 	}
 }

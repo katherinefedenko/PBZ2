@@ -21,14 +21,14 @@ public class FindWoman {
         recordsOnPage = new RecordsOnPage(display, controller);
 
         Label labelAge = new Label (shell, SWT.NONE);
-        labelAge.setText("Возраст:");
+        labelAge.setText("Age:");
         labelAge.setBounds(740, 425, 60, 20);
 
         Text textAge = new Text (shell, SWT.BORDER);
         textAge.setBounds(810, 425, 150, 20);
 
         Button findButton = new Button (shell, SWT.PUSH);
-        findButton.setText("Найти");
+        findButton.setText("Find");
         findButton.setBounds(740, 455, 120, 30);
 
         recordsOnPage.createTableWoman(shell);

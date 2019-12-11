@@ -21,95 +21,95 @@ public class AddWindow {
 		shell.open();
 		
 		Label labelMain = new Label (shell, SWT.NONE);
-		labelMain.setText("Р’РІРµРґРёС‚Рµ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РїР°С†РёРµРЅС‚Рµ");
+		labelMain.setText("Enter patient information");
 		labelMain.setBounds(85, 15, 250, 20);
 
         Label labelSurname = new Label (shell, SWT.NONE);
-        labelSurname.setText("Р¤Р°РјРёР»РёСЏ:");
+        labelSurname.setText("Surname: ");
         labelSurname.setBounds(10, 47, 70, 20);
 
         Text textSurname = new Text (shell, SWT.BORDER);
         textSurname.setBounds(85, 45, 180, 20);
 
 		Label labelName = new Label (shell, SWT.NONE);
-		labelName.setText("Р�РјСЏ:");
+		labelName.setText("Name :");
 		labelName.setBounds(10, 77, 70, 20);
 		
 		Text textName = new Text (shell, SWT.BORDER);
 		textName.setBounds(85, 75, 180, 20);
 		
 		Label labelSecondName = new Label (shell, SWT.NONE);
-        labelSecondName.setText("РћС‚С‡РµСЃС‚РІРѕ:");
+        labelSecondName.setText("SecondName:");
         labelSecondName.setBounds(10, 107, 70, 20);
 		
 		Text textSecondName = new Text (shell, SWT.BORDER);
         textSecondName.setBounds(85, 105, 180, 20);
 		
 		Label labelSex = new Label (shell, SWT.NONE);
-        labelSex.setText("РџРѕР»(Рј/Р¶):");
+        labelSex.setText("Sex (f/m):");
         labelSex.setBounds(10, 137, 70, 20);
 		
 		Text textSex = new Text (shell, SWT.BORDER);
         textSex.setBounds(85, 135, 180, 20);
 		
 		Label labelAge = new Label (shell, SWT.NONE);
-        labelAge.setText("Р’РѕР·СЂР°СЃС‚:");
+        labelAge.setText("Age:");
         labelAge.setBounds(10, 167, 70, 20);
 		
 		Text textAge = new Text (shell, SWT.BORDER);
         textAge.setBounds(85, 165, 40, 20);
 		
 		Label labelDiagnosis = new Label (shell, SWT.NONE);
-        labelDiagnosis.setText("Р”РёР°РіРЅРѕР·:");
+        labelDiagnosis.setText("Diagnosis:");
         labelDiagnosis.setBounds(10, 197, 70, 20);
 		
 		Text textDiagnosis = new Text (shell, SWT.BORDER);
         textDiagnosis.setBounds(85, 195, 180, 20);
 
         Label labelHowArrive = new Label (shell, SWT.NONE);
-        labelHowArrive.setText("РљР°Рє РїРѕСЃС‚СѓРїРёР»:");
+        labelHowArrive.setText("Arriving:");
         labelHowArrive.setBounds(10, 227, 90, 20);
 
         Text textHowArrive = new Text (shell, SWT.BORDER);
         textHowArrive.setBounds(105, 225, 70, 20);
 
         Label labelDateOfArrival = new Label (shell, SWT.NONE);
-        labelDateOfArrival.setText("Р”Р°С‚Р° РїРѕСЃС‚СѓРїР»РµРЅРёСЏ:");
+        labelDateOfArrival.setText("Arrival date:");
         labelDateOfArrival.setBounds(10, 257, 105, 20);
 
         Text textDateOfArrival = new Text (shell, SWT.BORDER);
         textDateOfArrival.setBounds(115, 255, 100, 20);
 
         Label labelGrowth = new Label (shell, SWT.NONE);
-        labelGrowth.setText("Р РѕСЃС‚:");
+        labelGrowth.setText("Growth:");
         labelGrowth.setBounds(10, 287, 70, 20);
 
         Text textGrowth = new Text (shell, SWT.BORDER);
         textGrowth.setBounds(85, 285, 40, 20);
 
         Label labelHairColor = new Label (shell, SWT.NONE);
-        labelHairColor.setText("Р¦РІРµС‚ РІРѕР»РѕСЃ:");
+        labelHairColor.setText("Hair color:");
         labelHairColor.setBounds(10, 317, 70, 20);
 
         Text textHairColor = new Text (shell, SWT.BORDER);
         textHairColor.setBounds(85, 315, 70, 20);
 
         Label labelSpecialSings = new Label (shell, SWT.NONE);
-        labelSpecialSings.setText("РћСЃРѕР±С‹Рµ РїСЂРёРјРµС‚С‹:");
+        labelSpecialSings.setText("Special signs:");
         labelSpecialSings.setBounds(10, 347, 100, 20);
 
         Text textSpecialSings = new Text (shell, SWT.BORDER);
         textSpecialSings.setBounds(115, 345, 180, 20);
 
         Label labelPossibleAge = new Label (shell, SWT.NONE);
-        labelPossibleAge.setText("РџСЂРёРјРµСЂРЅС‹Р№ РІРѕР·СЂР°СЃС‚:");
+        labelPossibleAge.setText("Possible Age:");
         labelPossibleAge.setBounds(10, 377, 120, 20);
 
         Text textPossibleAge = new Text (shell, SWT.BORDER);
         textPossibleAge.setBounds(135, 375, 40, 20);
 
         Label labelRoom = new Label (shell, SWT.NONE);
-        labelRoom.setText("РџР°Р»Р°С‚Р°:");
+        labelRoom.setText("Room:");
         labelRoom.setBounds(10, 407, 70, 20);
 
         Text textRoom = new Text (shell, SWT.BORDER);
@@ -129,7 +129,7 @@ public class AddWindow {
         });
 		
 		Button addButton = new Button (shell, SWT.PUSH);
-		addButton.setText("Р”РѕР±Р°РІРёС‚СЊ");
+		addButton.setText("Add patient");
 		addButton.setBounds(175, 455, 70, 30);
 		addButton.addSelectionListener(new SelectionAdapter() {
 

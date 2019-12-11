@@ -16,7 +16,7 @@ public class InfAboutTransferWindow {
         shell.open();
 
         Label labelMain = new Label (shell, SWT.NONE);
-        labelMain.setText("Переводы");
+        labelMain.setText("Transfers");
         labelMain.setBounds(155, 15, 250, 20);
 
         Label labelTransfers = new Label (shell, SWT.NONE);
@@ -29,7 +29,7 @@ public class InfAboutTransferWindow {
         String transfers = "";
 
         for (int i = 0; i < rooms.length; i++) {
-            transfers = transfers + "Комната:" + rooms[i] + "\n" + "Дата:" + dates[i] + "\n" + "Телефон:" +telephones[i] + ";" + "\n";
+            transfers = transfers + "Room:" + rooms[i] + "\n" + "Дата:" + dates[i] + "\n" + "Телефон:" +telephones[i] + ";" + "\n";
         }
         labelTransfers.setText(transfers);
     }

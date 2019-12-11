@@ -21,14 +21,14 @@ public class FindDate {
         recordsOnPage = new RecordsOnPage(display, controller);
 
         Label labelDate = new Label (shell, SWT.NONE);
-        labelDate.setText("Дата:");
+        labelDate.setText("Date:");
         labelDate.setBounds(740, 425, 60, 20);
 
         Text textDate = new Text (shell, SWT.BORDER);
         textDate.setBounds(810, 425, 150, 20);
 
         Button findButton = new Button (shell, SWT.PUSH);
-        findButton.setText("Найти");
+        findButton.setText("Find");
         findButton.setBounds(740, 455, 120, 30);
 
         recordsOnPage.createTableDate(shell);

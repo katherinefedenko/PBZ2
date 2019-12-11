@@ -18,26 +18,26 @@ public class TransferWindow {
         shell.open();
 
         Label labelMain = new Label (shell, SWT.NONE);
-        labelMain.setText("Введите информацию о переводе");
+        labelMain.setText("Enter transfer info");
         labelMain.setBounds(85, 15, 250, 20);
 
         Label labelOldRoom = new Label (shell, SWT.NONE);
-        labelOldRoom.setText("Старая палата:" + inf.get(12));
+        labelOldRoom.setText("Previous room:" + inf.get(12));
         labelOldRoom.setBounds(10, 47, 200, 20);
 
         Label labelOldTelephone = new Label (shell, SWT.NONE);
-        labelOldTelephone.setText("Старый номер:" + inf.get(13));
+        labelOldTelephone.setText("Previous phone:" + inf.get(13));
         labelOldTelephone.setBounds(10, 77, 200, 20);
 
         Label labelNewRoom = new Label (shell, SWT.NONE);
-        labelNewRoom.setText("Новая палата:");
+        labelNewRoom.setText("New room:");
         labelNewRoom.setBounds(10, 107, 120, 20);
 
         Text textNewRoom = new Text (shell, SWT.BORDER);
         textNewRoom.setBounds(135, 105, 70, 20);
 
         Label labelNewTelephone = new Label (shell, SWT.NONE);
-        labelNewTelephone.setText("Новый телефон:");
+        labelNewTelephone.setText("New phone:");
         labelNewTelephone.setBounds(10, 137, 120, 20);
 
         Text textNewTelephone = new Text (shell, SWT.BORDER);
@@ -58,14 +58,14 @@ public class TransferWindow {
         });
 
         Label labelDate = new Label (shell, SWT.NONE);
-        labelDate.setText("Дата перевода:");
+        labelDate.setText("Transfer date:");
         labelDate.setBounds(10, 167, 120, 20);
 
         Text textDate = new Text (shell, SWT.BORDER);
         textDate.setBounds(135, 165, 40, 20);
 
         Button addButton = new Button (shell, SWT.PUSH);
-        addButton.setText("Перевести");
+        addButton.setText("Transfer");
         addButton.setBounds(165, 235, 70, 30);
         addButton.addSelectionListener(new SelectionAdapter() {
 

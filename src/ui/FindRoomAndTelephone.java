@@ -19,28 +19,28 @@ public class FindRoomAndTelephone {
         shell.open();
         recordsOnPage = new RecordsOnPage(display, controller);
         Label labelSurname = new Label (shell, SWT.NONE);
-        labelSurname.setText("Р¤Р°РјРёР»РёСЏ:");
+        labelSurname.setText("Surname:");
         labelSurname.setBounds(740, 425, 60, 20);
 
         Text textSurname = new Text (shell, SWT.BORDER);
         textSurname.setBounds(810, 425, 150, 20);
 
         Label labelName = new Label (shell, SWT.NONE);
-        labelName.setText("Р�РјСЏ:");
+        labelName.setText("Name:");
         labelName.setBounds(740, 455, 70, 20);
 
         Text textName = new Text (shell, SWT.BORDER);
         textName.setBounds(810, 455, 150, 20);
 
         Label labelSecondName = new Label (shell, SWT.NONE);
-        labelSecondName.setText("РћС‚С‡РµСЃС‚РІРѕ:");
+        labelSecondName.setText("SecondName:");
         labelSecondName.setBounds(740, 485, 70, 20);
 
         Text textSecondName = new Text (shell, SWT.BORDER);
         textSecondName.setBounds(810, 485, 150, 20);
 
         Button findButton = new Button (shell, SWT.PUSH);
-        findButton.setText("РќР°Р№С‚Рё");
+        findButton.setText("Find");
         findButton.setBounds(740, 510, 120, 30);
 
         recordsOnPage.createTableRoomAndTelephone(shell);

@@ -17,11 +17,11 @@ public class ChangeWindowRoom {
         shell.open();
 
         Label labelMain = new Label (shell, SWT.NONE);
-        labelMain.setText("Введите новую информацию о палате №" + inf.get(0));
+        labelMain.setText("Enter new info about the room " + inf.get(0));
         labelMain.setBounds(85, 15, 250, 20);
 
         Label labelTelephone = new Label (shell, SWT.NONE);
-        labelTelephone.setText("Телефон:");
+        labelTelephone.setText("Room phone:");
         labelTelephone.setBounds(10, 47, 70, 20);
 
         Text textTelephone = new Text (shell, SWT.BORDER);
@@ -29,7 +29,7 @@ public class ChangeWindowRoom {
         textTelephone.setText(inf.get(1));
 
         Button addButton = new Button (shell, SWT.PUSH);
-        addButton.setText("Изменить");
+        addButton.setText("Update room");
         addButton.setBounds(165, 75, 70, 30);
         addButton.addSelectionListener(new SelectionAdapter() {
 

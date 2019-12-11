@@ -19,25 +19,25 @@ public class AddWindowRoom {
         shell.open();
 
         Label labelMain = new Label (shell, SWT.NONE);
-        labelMain.setText("Введите информацию о палате");
+        labelMain.setText("Enter room info");
         labelMain.setBounds(85, 15, 250, 20);
 
         Label labelRoom = new Label (shell, SWT.NONE);
-        labelRoom.setText("Палата:");
+        labelRoom.setText("Room number:");
         labelRoom.setBounds(10, 47, 70, 20);
 
         Text textRoom = new Text (shell, SWT.BORDER);
         textRoom.setBounds(85, 45, 180, 20);
 
         Label labelTelephone = new Label (shell, SWT.NONE);
-        labelTelephone.setText("Телефон:");
+        labelTelephone.setText("Room phone:");
         labelTelephone.setBounds(10, 77, 70, 20);
 
         Text textTelephone = new Text (shell, SWT.BORDER);
         textTelephone.setBounds(85, 75, 180, 20);
 
         Button addButton = new Button (shell, SWT.PUSH);
-        addButton.setText("Добавить");
+        addButton.setText("Add room");
         addButton.setBounds(175, 115, 70, 30);
         addButton.addSelectionListener(new SelectionAdapter() {
 
