@@ -107,6 +107,13 @@ public class AddWindow {
 
         Text textPossibleAge = new Text (shell, SWT.BORDER);
         textPossibleAge.setBounds(135, 375, 40, 20);
+        
+        Label labelTransfer = new Label (shell, SWT.NONE);
+        labelTransfer.setText("Transfer:");
+        labelTransfer.setBounds(10, 377, 120, 20);
+
+        Text textTransfer = new Text (shell, SWT.BORDER);
+        textTransfer.setBounds(135, 375, 40, 20);
 
         Label labelRoom = new Label (shell, SWT.NONE);
         labelRoom.setText("Room:");
@@ -147,6 +154,7 @@ public class AddWindow {
                 informationAboutPatient.add(textHairColor.getText());
                 informationAboutPatient.add(textSpecialSings.getText());
                 informationAboutPatient.add(textPossibleAge.getText());
+                informationAboutPatient.add(textTransfer.getText());
                 informationAboutPatient.add(textRoom.getText());
 
                 controller.addPatient(informationAboutPatient);

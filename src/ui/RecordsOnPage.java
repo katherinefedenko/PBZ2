@@ -104,7 +104,7 @@ public class RecordsOnPage {
 		telephoneNumberColumn.setWidth(80);
 
 		/*TableColumn transferColumn = new TableColumn(table, SWT.DEFAULT);
-		transferColumn.setText("РџРµСЂРµРІРѕРґ");
+		transferColumn.setText("Transfer");
 		transferColumn.setWidth(130);*/
 
 		TableColumn dateOfDischargeColumn = new TableColumn(table, SWT.DEFAULT);

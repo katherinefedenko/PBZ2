@@ -12,7 +12,9 @@ import java.util.Map;
 
 public class TransferWindow {
     public TransferWindow(Display display, Controller controller,
-                          RecordsOnPage recordsOnPage, Composite composite, int key, List<String> inf) {
+    		RecordsOnPage recordsOnPage, Composite composite, int key, List<String> inf)
+    {
+    	System.out.println("get transfer");
         Shell shell = new Shell(display, SWT.MAX | SWT.TITLE | SWT.CLOSE | SWT.SHELL_TRIM);
         shell.setBounds(500, 60, 400, 320);
         shell.open();
@@ -36,12 +38,12 @@ public class TransferWindow {
         Text textNewRoom = new Text (shell, SWT.BORDER);
         textNewRoom.setBounds(135, 105, 70, 20);
 
-        Label labelNewTelephone = new Label (shell, SWT.NONE);
+        /*Label labelNewTelephone = new Label (shell, SWT.NONE);
         labelNewTelephone.setText("New phone:");
         labelNewTelephone.setBounds(10, 137, 120, 20);
 
         Text textNewTelephone = new Text (shell, SWT.BORDER);
-        textNewTelephone.setBounds(135, 135, 100, 20);
+        textNewTelephone.setBounds(135, 135, 100, 20);*/
 
         Combo combo = new Combo(shell, SWT.DROP_DOWN | SWT.READ_ONLY);
         combo.setBounds(240, 105, 120, 20);
@@ -53,12 +55,12 @@ public class TransferWindow {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 textNewRoom.setText(combo.getText().split(" ")[0]);
-                textNewTelephone.setText(combo.getText().split(" ")[1]);
+                //textNewTelephone.setText(combo.getText().split(" ")[1]);
             }
         });
 
         Label labelDate = new Label (shell, SWT.NONE);
-        labelDate.setText("Transfer date:");
+        labelDate.setText(" date:");
         labelDate.setBounds(10, 167, 120, 20);
 
         Text textDate = new Text (shell, SWT.BORDER);
@@ -73,17 +75,17 @@ public class TransferWindow {
                 List<String> transfer = controller.getTransfer(key);
                 String room = transfer.get(0);
                 String date = transfer.get(1);
-                String telephone = transfer.get(2);
+                //String telephone = transfer.get(2);
 
                 room = room + " " + inf.get(12);
-                telephone = telephone + " " + inf.get(13);
+                //telephone = telephone + " " + inf.get(13);
                 date = date + " " + textDate.getText();
 
                 transfer.set(0, room);
                 transfer.set(1, date);
-                transfer.set(2, telephone);
+                //transfer.set(2, telephone);
 
-                controller.updateRoom(key, transfer, Integer.parseInt(textNewRoom.getText()));
+                controller.updateRoom(key, transfer, Integer.parseInt(textNewRoom.getText()), textDate.getText());
 
                 recordsOnPage.refresh(composite);
                 recordsOnPage.createTablePatients(composite);

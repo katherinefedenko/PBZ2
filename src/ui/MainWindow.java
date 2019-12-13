@@ -41,6 +41,7 @@ public class MainWindow {
 		shell.setBounds(150, 100, 1200, 600);
 		shell.setText("Hospital");
 		shell.forceFocus();
+		System.out.println("First 1" + firstIteration);
 
 		Button openDatabase = new Button(shell, SWT.PUSH);
 		openDatabase.setText("Open Patient DataBase");
@@ -48,12 +49,15 @@ public class MainWindow {
 		openDatabase.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent arg0) {
+				System.out.println("First 2" + firstIteration);
 			    if (!firstIteration) {
+			    	System.out.println("First 3" + firstIteration);
                     recordsOnPage.refreshRooms(shell);
                 }
                 recordsOnPage.createTablePatients(shell);
                 controller.openDatabase();
                 recordsOnPage.setRecords(controller.getAllPatients());
+                recordsOnPage.setRecords(controller.getAllTransfer());
                 firstIteration = false;
 			}
 		});

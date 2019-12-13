@@ -19,7 +19,7 @@ import java.util.Locale;
 public class Main {
     public static void main(String[] args) throws ParseException {
         
-    	String url = "jdbc:postgresql://localhost:5432/postgres";
+    	/*String url = "jdbc:postgresql://localhost:5432/postgres";
         String username = "postgres";
         String password = "postgres";
         
@@ -59,7 +59,7 @@ public class Main {
            
        } catch (Exception ex) {
             System.out.println(ex);
-        }
+        }*/
             MainWindow mainWindow = new MainWindow();
             mainWindow.createMainWindow();
         /*String url = "jdbc:mysql://localhost/test_schema?useUnicode=true&serverTimezone=UTC&useSSL=false";

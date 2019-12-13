@@ -20,16 +20,16 @@ public class InfAboutTransferWindow {
         labelMain.setBounds(155, 15, 250, 20);
 
         Label labelTransfers = new Label (shell, SWT.NONE);
-        labelTransfers.setBounds(10, 47, 70, 400);
+        labelTransfers.setBounds(10, 47, 200, 400);
 
         List<String[]> inf = controller.findTransfers(key);
         String[] rooms = inf.get(0);
         String[] dates = inf.get(1);
-        String[] telephones = inf.get(2);
+        //String[] telephones = inf.get(2);
         String transfers = "";
 
         for (int i = 0; i < rooms.length; i++) {
-            transfers = transfers + "Room:" + rooms[i] + "\n" + "Дата:" + dates[i] + "\n" + "Телефон:" +telephones[i] + ";" + "\n";
+            transfers = transfers + "Room: " + rooms[i] + "\n" + "Date: " + dates[i] + "\n";
         }
         labelTransfers.setText(transfers);
     }

@@ -30,10 +30,13 @@ public class Controller {
     public List<Patient> getAllPatients() {
         try {
             listOfPatient = new ArrayList<>();
-            String command = "SELECT * FROM patients JOIN room USING (room) JOIN transfer ON transfer.id = patients.transfer";
+            String command = "SELECT * FROM patients JOIN room USING (room)";
             PreparedStatement preparedStatement = connection.prepareStatement(command);
             ResultSet resultSet = preparedStatement.executeQuery();
+            System.out.println("getall");
+           
             while (resultSet.next()) {
+            	
                 Patient patient = new Patient();
                 patient.setKey(resultSet.getInt("id"));
                 patient.setNumberOfRoom(Integer.toString(resultSet.getInt("room")));
@@ -49,14 +52,57 @@ public class Controller {
                 patient.setHairColor(resultSet.getString(12));
                 patient.setSpecialSigns(resultSet.getString(13));
                 patient.setPossibleSigns(resultSet.getString(14));
+                //patient.setTransfer(resultSet.getString("transfer"));
                 patient.setDateOfDischarge(resultSet.getString("dateOfDischarge"));
                 patient.setCauseOfDischarge(resultSet.getString("causeOfDischarge"));
                 patient.setTelephoneNumber(resultSet.getString("phone"));
-                if (resultSet.getString(18).equals("")) patient.setTransfer("");
-                else patient.setTransfer(resultSet.getString(18) + "/" + resultSet.getString(19) + "/" +
-                        resultSet.getString(20) + ";");
+                //if (resultSet.getString(18).equals("")) patient.setTransfer("");
+                //else patient.setTransfer(resultSet.getString(18) + "/" + resultSet.getString(19) + ";");
+                //System.out.println("tr17 " + resultSet.getString(17)+"tr18 " + resultSet.getString(18)+ "tr19" + resultSet.getString(19));
                 listOfPatient.add(patient);
-            }
+                }
+            preparedStatement.close();
+            resultSet.close();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+        return listOfPatient;
+    }
+    
+    public List<Patient> getAllTransfer() {
+        try {
+            listOfPatient = new ArrayList<>();
+            String command = "SELECT * FROM patients JOIN transfer USING (id)";
+            PreparedStatement preparedStatement = connection.prepareStatement(command);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            System.out.println("getall");
+           
+            while (resultSet.next()) {
+            	
+                Patient patient = new Patient();
+                /*patient.setKey(resultSet.getInt("id"));
+                patient.setNumberOfRoom(Integer.toString(resultSet.getInt("room")));
+                patient.setSurname(resultSet.getString(3));
+                patient.setName(resultSet.getString(4));
+                patient.setSecondName(resultSet.getString(5));
+                patient.setSex(resultSet.getString(6));
+                patient.setAge(resultSet.getString(7));
+                patient.setDiagnosis(resultSet.getString(8));
+                patient.setHowArrive(resultSet.getString(9));
+                patient.setDateOfArrival(resultSet.getString(10));
+                patient.setGrowth(resultSet.getString(11));
+                patient.setHairColor(resultSet.getString(12));
+                patient.setSpecialSigns(resultSet.getString(13));
+                patient.setPossibleSigns(resultSet.getString(14));
+                //patient.setTransfer(resultSet.getString("transfer"));
+                patient.setDateOfDischarge(resultSet.getString("dateOfDischarge"));
+                patient.setCauseOfDischarge(resultSet.getString("causeOfDischarge"));
+                patient.setTelephoneNumber(resultSet.getString("phone"));*/
+                //if (resultSet.getString(18).equals("")) patient.setTransfer("");
+                patient.setTransfer(resultSet.getString(18) + "/" + resultSet.getString(19) + ";");
+                //System.out.println("tr17 " + resultSet.getString(17)+"tr18 " + resultSet.getString(18)+ "tr19" + resultSet.getString(19));
+                listOfPatient.add(patient);
+                }
             preparedStatement.close();
             resultSet.close();
         } catch (Exception ex) {
@@ -95,7 +141,7 @@ public class Controller {
             while (resultSet.next()) {
                 transfer.add(resultSet.getString(2));
                 transfer.add(resultSet.getString(3));
-                transfer.add(resultSet.getString(4));
+                //transfer.add(resultSet.getString(4));
             }
             preparedStatement.close();
             resultSet.close();
@@ -105,14 +151,18 @@ public class Controller {
         return transfer;
     }
 
-    public void updateRoom(int id, List<String> transfer, int room) {
+    public void updateRoom(int id, List<String> transfer, int room, String date) {
         try {
-            String command = "UPDATE transfer SET room = ?, date = ?, telephone = ? WHERE id = ?";
+        	//String command = "UPDATE patients SET transfer = ?, date = ?  WHERE id = ?";
+            //String command = "UPDATE transfer SET room = ?, date = ?  WHERE id = ?";
+        	String command = "INSERT INTO transfer (id, room, date) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(command);
-            preparedStatement.setString(1, transfer.get(0));
-            preparedStatement.setString(2, transfer.get(1));
-            preparedStatement.setString(3, transfer.get(2));
-            preparedStatement.setString(4, String.valueOf(id));
+            /*System.out.println("tr0 "+transfer.get(0));
+            System.out.println("tr1 "+transfer.get(1));*/
+            preparedStatement.setInt(1, id);
+            preparedStatement.setInt(2, room);
+            preparedStatement.setString(3, date);
+            //preparedStatement.setString(4, String.valueOf(id));
             preparedStatement.executeUpdate();
             preparedStatement.close();
         } catch (Exception ex) {
@@ -120,16 +170,22 @@ public class Controller {
         }
 
         try{
-            String command = "UPDATE patients SET room = ? WHERE id = ?";
+            String command = "UPDATE patients SET room = ? transfer = ? WHERE id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(command);
             preparedStatement.setInt(1, room);
             preparedStatement.setInt(2, id);
+            preparedStatement.setInt(3, id);
             preparedStatement.executeUpdate();
             preparedStatement.close();
         }
         catch(Exception ex){
             System.out.println(ex);
         }
+        
+        
+        
+  
+        
     }
 
     public Map<Integer, String> getAllRooms() {
@@ -180,28 +236,28 @@ public class Controller {
             System.out.println(ex);
         }
 
-        try {
+        /*try {
             System.out.println("HERE1");
             int key = getPatientKey(informationAboutPatient.get(0), informationAboutPatient.get(1), informationAboutPatient.get(7));
-            System.out.println("HERE1/2" + key);
-            String command = "INSERT INTO transfer (id, room, date, telephone) VALUES (?, ?, ?, ?)";
+            System.out.println("HERE1/2 " + key);
+            String command = "INSERT INTO transfer (id, room, date) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = connection.prepareStatement(command);
             System.out.println("HERE2");
             preparedStatement.setString(1, Integer.toString(key));
             preparedStatement.setString(2, "");
             preparedStatement.setString(3, "");
-            preparedStatement.setString(4, "");
+            //preparedStatement.setString(4, "");
             System.out.println("HERE3");
             preparedStatement.executeUpdate();
             preparedStatement.close();
         } catch (Exception ex) {
             System.out.println(ex);
-        }
+        }*/
     }
 
     public void addRoom(List<String> informationAboutRoom) {
         int index = 1;
-        String command = "INSERT INTO room (room, telephone) VALUES (?, ?)";
+        String command = "INSERT INTO room (room, phone) VALUES (?, ?)";
         try(PreparedStatement preparedStatement = connection.prepareStatement(command)) {
             for (String inf : informationAboutRoom) {
                 preparedStatement.setString(index, inf);
@@ -305,6 +361,20 @@ public class Controller {
     }
 
     public List<Patient> findDate(String dateIn) {
+    	/*int key = 0;
+    	try {
+            String command = "SELECT * FROM patients WHERE dateOfArrival = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(command);
+            preparedStatement.setString(1, dateIn);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                key = resultSet.getInt("id");
+            }
+            preparedStatement.close();
+            resultSet.close();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }*/
         int[] date = convertToInt(dateIn.split("\\."));
         listOfPatient = getAllPatients();
         List<Patient> list = new ArrayList<>();
@@ -319,6 +389,7 @@ public class Controller {
             }
         }
         return list;
+    	
     }
 
     public List<Patient> findWoman(int age) {
@@ -326,7 +397,7 @@ public class Controller {
         List<Patient> list = new ArrayList<>();
         for (Patient patient : listOfPatient) {
             if (patient.getDateOfDischarge().isEmpty()) {
-                if(Integer.parseInt(patient.getAge()) >= age && patient.getSex().equals("Ð¶")) list.add(patient);
+                if(Integer.parseInt(patient.getAge()) >= age && patient.getSex().equals("ì")) list.add(patient);
             }
         }
         return list;
@@ -336,19 +407,21 @@ public class Controller {
         List<String[]> transfer = new ArrayList<>();
         String[] room;
         String[] dates;
-        String[] telephones;
+        
         try {
             String command = "SELECT * FROM transfer WHERE id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(command);
-            preparedStatement.setString(1, String.valueOf(key));
+            preparedStatement.setInt(1, key);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
+            	System.out.println("room1"+resultSet.getString(2));
+            	System.out.println("date2"+resultSet.getString(3));
                 room = resultSet.getString(2).split(" ");
                 dates = resultSet.getString(3).split(" ");
-                telephones = resultSet.getString(4).split(" ");
+                //telephones = resultSet.getString(4).split(" ");
                 transfer.add(room);
                 transfer.add(dates);
-                transfer.add(telephones);
+                //transfer.add(telephones);
             }
             preparedStatement.close();
             resultSet.close();
