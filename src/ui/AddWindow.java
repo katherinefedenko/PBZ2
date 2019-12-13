@@ -17,7 +17,7 @@ public class AddWindow {
 	
 	public AddWindow(Display display, Controller controller, RecordsOnPage recordsOnPage, Composite composite) {
 		Shell shell = new Shell(display, SWT.MAX | SWT.TITLE | SWT.CLOSE | SWT.SHELL_TRIM);
-		shell.setBounds(500, 60, 400, 530);
+		shell.setBounds(500, 60, 400, 600);
 		shell.open();
 		
 		Label labelMain = new Label (shell, SWT.NONE);
@@ -108,22 +108,29 @@ public class AddWindow {
         Text textPossibleAge = new Text (shell, SWT.BORDER);
         textPossibleAge.setBounds(135, 375, 40, 20);
         
-        Label labelTransfer = new Label (shell, SWT.NONE);
-        labelTransfer.setText("Transfer:");
-        labelTransfer.setBounds(10, 377, 120, 20);
+        Label labelDateOfDischarge = new Label (shell, SWT.NONE);
+        labelDateOfDischarge.setText("Discharge date:");
+        labelDateOfDischarge.setBounds(10, 407, 120, 20);
 
-        Text textTransfer = new Text (shell, SWT.BORDER);
-        textTransfer.setBounds(135, 375, 40, 20);
+        Text textDateOfDischarge = new Text (shell, SWT.BORDER);
+        textDateOfDischarge.setBounds(135, 407, 40, 20);
+        
+        Label labelCauseOfDischarge = new Label (shell, SWT.NONE);
+        labelCauseOfDischarge.setText("Discharge cause:");
+        labelCauseOfDischarge.setBounds(10, 440, 120, 20);
+
+        Text textCauseOfDischarge = new Text (shell, SWT.BORDER);
+        textCauseOfDischarge.setBounds(135, 440, 40, 20);
 
         Label labelRoom = new Label (shell, SWT.NONE);
         labelRoom.setText("Room:");
-        labelRoom.setBounds(10, 407, 70, 20);
+        labelRoom.setBounds(10, 470, 70, 20);
 
         Text textRoom = new Text (shell, SWT.BORDER);
-        textRoom.setBounds(85, 405, 40, 20);
+        textRoom.setBounds(85, 470, 40, 20);
 
         Combo combo = new Combo(shell, SWT.DROP_DOWN | SWT.READ_ONLY);
-        combo.setBounds(140, 405, 120, 20);
+        combo.setBounds(140, 470, 120, 20);
         for(Map.Entry room : controller.getAllRooms().entrySet()) {
             combo.add(Integer.toString((Integer) room.getKey()));
         }
@@ -137,7 +144,7 @@ public class AddWindow {
 		
 		Button addButton = new Button (shell, SWT.PUSH);
 		addButton.setText("Add patient");
-		addButton.setBounds(175, 455, 70, 30);
+		addButton.setBounds(175, 500, 70, 30);
 		addButton.addSelectionListener(new SelectionAdapter() {
 
 			public void widgetSelected(SelectionEvent arg0) {
@@ -154,7 +161,8 @@ public class AddWindow {
                 informationAboutPatient.add(textHairColor.getText());
                 informationAboutPatient.add(textSpecialSings.getText());
                 informationAboutPatient.add(textPossibleAge.getText());
-                informationAboutPatient.add(textTransfer.getText());
+                informationAboutPatient.add(textDateOfDischarge.getText());
+                informationAboutPatient.add(textCauseOfDischarge.getText());
                 informationAboutPatient.add(textRoom.getText());
 
                 controller.addPatient(informationAboutPatient);

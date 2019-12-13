@@ -126,7 +126,7 @@ public class ChangeWindow {
 
         Text textDateDischarge = new Text (shell, SWT.BORDER);
         textDateDischarge.setBounds(115, 405, 70, 20);
-        textDateDischarge.setText(inf.get(15));
+        textDateDischarge.setText(inf.get(14));
 
         Label labelCauseDischarge = new Label (shell, SWT.NONE);
         labelCauseDischarge.setText("Cause of discharge:");
@@ -134,7 +134,7 @@ public class ChangeWindow {
 
         Text textCauseDischarge = new Text (shell, SWT.BORDER);
         textCauseDischarge.setBounds(115, 435, 70, 20);
-        textCauseDischarge.setText(inf.get(16));
+        textCauseDischarge.setText(inf.get(15));
 
         Button addButton = new Button (shell, SWT.PUSH);
         addButton.setText("Add info");

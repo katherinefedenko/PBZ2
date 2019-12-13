@@ -14,7 +14,7 @@ public class TransferWindow {
     public TransferWindow(Display display, Controller controller,
     		RecordsOnPage recordsOnPage, Composite composite, int key, List<String> inf)
     {
-    	System.out.println("get transfer");
+    	
         Shell shell = new Shell(display, SWT.MAX | SWT.TITLE | SWT.CLOSE | SWT.SHELL_TRIM);
         shell.setBounds(500, 60, 400, 320);
         shell.open();
@@ -73,6 +73,8 @@ public class TransferWindow {
 
             public void widgetSelected(SelectionEvent arg0) {
                 List<String> transfer = controller.getTransfer(key);
+                System.out.println("get tranfer");
+
                 String room = transfer.get(0);
                 String date = transfer.get(1);
                 //String telephone = transfer.get(2);
@@ -85,7 +87,8 @@ public class TransferWindow {
                 transfer.set(1, date);
                 //transfer.set(2, telephone);
 
-                controller.updateRoom(key, transfer, Integer.parseInt(textNewRoom.getText()), textDate.getText());
+                controller.updateRoom(key, transfer, textNewRoom.getText(), textDate.getText());
+                System.out.println("updateroom");
 
                 recordsOnPage.refresh(composite);
                 recordsOnPage.createTablePatients(composite);
